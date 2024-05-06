@@ -46,7 +46,7 @@ const LogIn = () => {
    }
 
   return (
-    <div className="hero min-h-screen  bg-[url('../../assets/others/authentication.png'')] mt-4">
+    <div className="hero min-h-screen  bg-[url('../../assets/others/authentication.png'')] mt-4 shadow-lg">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <div>

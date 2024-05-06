@@ -8,6 +8,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import DashBoard from "../Layout/DashBoard";
 import Cart from "../Pages/DashBoard/Cart/Cart";
 import PrivateRoute from "./PrivateRoute";
+import AllUsers from "../Pages/DashBoard/Allusers/AllUsers";
 
 export const router = createBrowserRouter([
   {
@@ -48,6 +49,11 @@ export const router = createBrowserRouter([
         path: "cart",
         element: <Cart></Cart>,
       },
+      // addmin routes
+      {
+        path:"users",
+        element:<AllUsers></AllUsers>
+      }
     ],
   },
 ]);
