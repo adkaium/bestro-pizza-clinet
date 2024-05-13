@@ -10,12 +10,13 @@ import {
 import {FaRev, FaUtensils} from "react-icons/fa6";
 import {NavLink, Outlet} from "react-router-dom";
 import useCarts from "../hooks/useCarts";
+import useAdmin from "../hooks/useAdmin";
 
 const DashBoard = () => {
   const [cart] = useCarts();
 
   // TODO get admin data from to database
-  const isAdmin = true;
+const [isAdmin] = useAdmin();
   return (
     <div className="flex">
       <div className="w-64 min-h-screen bg-slate-700">
