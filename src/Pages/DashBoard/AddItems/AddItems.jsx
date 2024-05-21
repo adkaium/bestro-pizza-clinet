@@ -1,15 +1,26 @@
 import { useForm } from "react-hook-form";
 import TextHeading from "../../../Components/TextHeading/TextHeading";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
+const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 
+const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const AddItems = () => {
     const {register, handleSubmit} = useForm();
+    const axiosPublic = useAxiosPublic();
 
-    const onSubmit = (data) => {
+    const onSubmit = async(data) => {
+      console.log(data);
+      // image upload to imgbb and then get an url from imabb
+      const imageFile = {image: data.image[0]}
 
-
-        console.log(data);
+      const res =await axiosPublic.post(image_hosting_api, imageFile, {
+        headers:{
+          'Content-Type' : 'multipart/form-data'
+        }
+      })
+      console.log(res.data);
     };
     return (
       <div>
